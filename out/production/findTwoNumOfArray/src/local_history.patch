@@ -1,0 +1,354 @@
+Index: out/production/findTwoNumOfArray/.idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/findTwoNumOfArray/.idea/vcs.xml b/out/production/findTwoNumOfArray/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1678526149375)
++++ b/out/production/findTwoNumOfArray/.idea/vcs.xml	(date 1678526149375)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: out/production/findTwoNumOfArray/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/findTwoNumOfArray/.idea/misc.xml b/out/production/findTwoNumOfArray/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1678526149376)
++++ b/out/production/findTwoNumOfArray/.idea/misc.xml	(date 1678526149376)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: out/production/findTwoNumOfArray/.idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/findTwoNumOfArray/.idea/.gitignore b/out/production/findTwoNumOfArray/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1678526149375)
++++ b/out/production/findTwoNumOfArray/.idea/.gitignore	(date 1678526149375)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: out/production/findTwoNumOfArray/.idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/findTwoNumOfArray/.idea/modules.xml b/out/production/findTwoNumOfArray/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1678526149376)
++++ b/out/production/findTwoNumOfArray/.idea/modules.xml	(date 1678526149376)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/findTwoNumOfArray.iml" filepath="$PROJECT_DIR$/.idea/findTwoNumOfArray.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: out/production/findTwoNumOfArray/.idea/findTwoNumOfArray.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/findTwoNumOfArray/.idea/findTwoNumOfArray.iml b/out/production/findTwoNumOfArray/.idea/findTwoNumOfArray.iml
+new file mode 100644
+--- /dev/null	(date 1678526149372)
++++ b/out/production/findTwoNumOfArray/.idea/findTwoNumOfArray.iml	(date 1678526149372)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Main.java b/Main.java
+new file mode 100644
+--- /dev/null	(date 1678526148373)
++++ b/Main.java	(date 1678526148373)
+@@ -0,0 +1,20 @@
++import java.util.Scanner;
++
++public class Main {
++    public static void main(String[] args) {
++        FillArray fill = new FillArray();
++        String str;
++        Scanner scanner = new Scanner(System.in);
++        SortArrayInt sortArrays = new SortArrayInt();
++        // читаем строку из консоли
++        System.out.println("Enter an array in the form: x x x x");
++        str = scanner.nextLine();
++
++        Integer[] mass = fill.ArrayFromString(str); // преобразуем строку в массив чисел
++        int result = fill.requestСondition(); // получаем из консоли число два слагаемых которого буде искать в массиве
++
++        Integer[] sortMass = sortArrays.sort(mass);// сортируем массив по возрастанию, выводим его на экран
++        Integer[] resultMass = sortArrays.searchResult(sortMass, result);// ищем слагаемые, введенного ранее сисла
++        // в мвссиве и выводи результирующий массив из двух чисел на экран
++    }
++}
+Index: SortArrays.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/SortArrays.java b/SortArrays.java
+new file mode 100644
+--- /dev/null	(date 1678526148381)
++++ b/SortArrays.java	(date 1678526148381)
+@@ -0,0 +1,5 @@
++public interface SortArrays<T> {
++    T[] sort(T[] mass);
++
++    T[] searchResult(T[] mass, T t);
++}
+Index: SortArrayInt.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/SortArrayInt.java b/SortArrayInt.java
+new file mode 100644
+--- /dev/null	(date 1678526148379)
++++ b/SortArrayInt.java	(date 1678526148379)
+@@ -0,0 +1,46 @@
++import java.util.Arrays;
++
++public class SortArrayInt implements SortArrays<Integer>{
++
++
++    @Override // сортировка массива по возрастанию
++    public Integer[] sort(Integer[] mass) {
++        for(int i=0;i<mass.length;i++) {
++            for (int j = i + 1; j < mass.length; j++) {
++                if (mass[i] > mass[j]) {
++                    int a = mass[i];
++                    swap(mass, i, j, a);
++                }
++            }
++        }
++        System.out.println("Sorted array: "+Arrays.toString(mass));
++        return mass;
++    }
++
++    @Override // начодим в массиве читсел два слагаемых заданного в аргументах числа, формируем массив с ответом
++    public Integer[] searchResult(Integer[] mass, Integer t) {
++        Integer[] resultMass = new Integer[2];
++        int startPointer = 0;
++        int finalPointer = mass.length-1;
++        while(startPointer<finalPointer){
++            if(mass[startPointer]+mass[finalPointer]==t){
++                resultMass = new Integer[]{mass[startPointer], mass[finalPointer]};
++                System.out.println("Desired array: "+ Arrays.toString(resultMass));
++                return resultMass;
++            }
++            else if(mass[startPointer]+mass[finalPointer]<t){
++                startPointer++;
++            }
++            else {
++                finalPointer--;
++            }
++        }
++        System.out.println("Result not found!");
++        return new Integer[0];
++    }
++
++    private void swap(Integer[] mass, int i, int j, int a){
++        mass[i] = mass [j];
++        mass[j] = a;
++    }
++}
+Index: FillArrayFromStr.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/FillArrayFromStr.java b/FillArrayFromStr.java
+new file mode 100644
+--- /dev/null	(date 1678526148383)
++++ b/FillArrayFromStr.java	(date 1678526148383)
+@@ -0,0 +1,3 @@
++public interface FillArrayFromStr {
++    Integer [] ArrayFromString (String str);
++}
+Index: src/SortArrays.java
+===================================================================
+diff --git a/src/SortArrays.java b/src/SortArrays.java
+deleted file mode 100644
+--- a/src/SortArrays.java	
++++ /dev/null	
+@@ -1,7 +0,0 @@
+-package src;
+-
+-public interface SortArrays<T> {
+-    T[] sort(T[] mass);
+-
+-    T[] searchResult(T[] mass, T t);
+-}
+Index: src/SortArrayInt.java
+===================================================================
+diff --git a/src/SortArrayInt.java b/src/SortArrayInt.java
+deleted file mode 100644
+--- a/src/SortArrayInt.java	
++++ /dev/null	
+@@ -1,47 +0,0 @@
+-package src;
+-import java.util.Arrays;
+-
+-public class SortArrayInt implements SortArrays<Integer>{
+-
+-
+-    @Override // сортировка массива по возрастанию
+-    public Integer[] sort(Integer[] mass) {
+-        for(int i=0;i<mass.length;i++) {
+-            for (int j = i + 1; j < mass.length; j++) {
+-                if (mass[i] > mass[j]) {
+-                    int a = mass[i];
+-                    swap(mass, i, j, a);
+-                }
+-            }
+-        }
+-        System.out.println("Sorted array: "+Arrays.toString(mass));
+-        return mass;
+-    }
+-
+-    @Override // начодим в массиве читсел два слагаемых заданного в аргументах числа, формируем массив с ответом
+-    public Integer[] searchResult(Integer[] mass, Integer t) {
+-        Integer[] resultMass = new Integer[2];
+-        int startPointer = 0;
+-        int finalPointer = mass.length-1;
+-        while(startPointer<finalPointer){
+-            if(mass[startPointer]+mass[finalPointer]==t){
+-                resultMass = new Integer[]{mass[startPointer], mass[finalPointer]};
+-                System.out.println("Desired array: "+ Arrays.toString(resultMass));
+-                return resultMass;
+-            }
+-            else if(mass[startPointer]+mass[finalPointer]<t){
+-                startPointer++;
+-            }
+-            else {
+-                finalPointer--;
+-            }
+-        }
+-        System.out.println("Result not found!");
+-        return new Integer[0];
+-    }
+-
+-    private void swap(Integer[] mass, int i, int j, int a){
+-        mass[i] = mass [j];
+-        mass[j] = a;
+-    }
+-}
+Index: src/Main.java
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+deleted file mode 100644
+--- a/src/Main.java	
++++ /dev/null	
+@@ -1,21 +0,0 @@
+-package src;
+-import java.util.Scanner;
+-
+-public class Main {
+-    public static void main(String[] args) {
+-        FillArray fill = new FillArray();
+-        String str;
+-        Scanner scanner = new Scanner(System.in);
+-        SortArrayInt sortArrays = new SortArrayInt();
+-        // читаем строку из консоли
+-        System.out.println("Enter an array in the form: x x x x");
+-        str = scanner.nextLine();
+-
+-        Integer[] mass = fill.ArrayFromString(str); // преобразуем строку в массив чисел
+-        int result = fill.requestСondition(); // получаем из консоли число два слагаемых которого буде искать в массиве
+-
+-        Integer[] sortMass = sortArrays.sort(mass);// сортируем массив по возрастанию, выводим его на экран
+-        Integer[] resultMass = sortArrays.searchResult(sortMass, result);// ищем слагаемые, введенного ранее сисла
+-        // в мвссиве и выводи результирующий массив из двух чисел на экран
+-    }
+-}
+Index: src/FillArrayFromStr.java
+===================================================================
+diff --git a/src/FillArrayFromStr.java b/src/FillArrayFromStr.java
+deleted file mode 100644
+--- a/src/FillArrayFromStr.java	
++++ /dev/null	
+@@ -1,5 +0,0 @@
+-package src;
+-
+-public interface FillArrayFromStr {
+-    Integer [] ArrayFromString (String str);
+-}
+Index: src/FillArray.java
+===================================================================
+diff --git a/src/FillArray.java b/src/FillArray.java
+deleted file mode 100644
+--- a/src/FillArray.java	
++++ /dev/null	
+@@ -1,37 +0,0 @@
+-package src;
+-import java.util.Scanner;
+-
+-public class FillArray implements FillArrayFromStr{
+-    String[] strMass;
+-    String str;
+-    int request;
+-    Scanner scan = new Scanner(System.in);
+-    public int requestСondition () {
+-        while (true) {
+-            System.out.println("Enter an integer, the terms of which will be searched in the array?");
+-            if (scan.hasNextInt()) {
+-                request = scan.nextInt();
+-                break;
+-            } else {
+-                System.out.println("Error!!! Enter an integer, the terms of which will be searched in the array!");
+-            }
+-        }
+-        scan.close();
+-        return request;
+-    }
+-
+-    @Override
+-    public Integer[] ArrayFromString(String str) {
+-        strMass = str.split(" ");
+-        Integer[] mass = new Integer[strMass.length];
+-        for (int i = 0; i < strMass.length; i++) {
+-            try {
+-                mass[i] = Integer.parseInt(strMass[i]);
+-            } catch (NumberFormatException e) {
+-                mass[i] = 0;
+-            }
+-        }
+-        return mass;
+-    }
+-}
+-
