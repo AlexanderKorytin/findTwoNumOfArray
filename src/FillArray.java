@@ -2,12 +2,10 @@ package src;
 import java.util.Scanner;
 
 public class FillArray implements FillArrayFromStr{
-    String[] strMass;
-    String str;
-    int request;
     Scanner scan = new Scanner(System.in);
     // считываем из консоли число, слагаемые которого будем искать в массиве.
     public int request () {
+        int request;
         while (true) {
             System.out.println("Enter an integer, the terms of which will be searched in the array?");
             if (scan.hasNextInt()) {
@@ -23,7 +21,7 @@ public class FillArray implements FillArrayFromStr{
   // метод прербразующий переданную на его вход строку в массив
     @Override
     public Integer[] ArrayFromString(String str) {
-        strMass = str.split(" ");
+        String[] strMass = str.split(" ");
         Integer[] mass = new Integer[strMass.length];
         for (int i = 0; i < strMass.length; i++) {
             try {
